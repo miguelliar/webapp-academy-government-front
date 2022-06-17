@@ -1,12 +1,11 @@
+import "reflect-metadata";
+import { XInstaller, xPlugin } from "@empathyco/x-components";
 import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
+import { installXOptions } from "@/x-components/plugin.options";
+import { adapter } from "@/adapter/adapter";
 
 Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount("#app");
+new XInstaller(installXOptions).init();
+
+Vue.use(xPlugin, { adapter });
