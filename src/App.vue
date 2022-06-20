@@ -23,6 +23,8 @@
   //Colours that will be used in the web
   --background-colour: rgb(255, 255, 255);
   --font-colour: rgb(36, 61, 72);
+  --font-selected-link: #42b983;
+  --font-unselected-link: rgb(36, 61, 72);
 }
 #app {
   font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
@@ -50,6 +52,8 @@
 
   p {
     text-align: justify;
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
 
   .sections-landing-page {
@@ -79,12 +83,13 @@ nav {
     margin-right: 10px;
     padding: 8px 10px;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--font-unselected-link);
     border: solid 5px;
     border-radius: 30px;
+    transition: 0.5s;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: var(--font-selected-link);
     }
   }
 

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Academy Government Data</h1>
+    <h1>¿Qué es esto?</h1>
     <div class="content-landing-page">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac
@@ -22,7 +22,8 @@
         <p>
           ¿Nunca te has planteado qué pasa con las subvenciones que se dan?
           Entra y explora con nuestros recursos las distintas distribuciones de
-          cómo se están concediendo las subvenciones.
+          cómo se están concediendo las subvenciones. Entra
+          <router-link to="/explora">aquí</router-link> para ello.
         </p>
         <img src="../assets/WIP.jpeg" alt="Work in progress" />
       </article>
@@ -31,7 +32,8 @@
         <p>
           Quizás has recibido una subvención o quieres buscar algunos datos en
           concreto. Con nuestro sistema de búsqueda encontrar lo que buscas será
-          pan comido (o al menos más fácil que por la vía convencional).
+          pan comido (o al menos más fácil que por la vía convencional). Entra
+          <router-link to="/explora">aquí</router-link> para ello.
         </p>
         <img src="../assets/WIP.jpeg" alt="Work in progress" />
       </article>
@@ -54,5 +56,9 @@ article,
 .content-landing-page {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+}
+a {
+  color: var(--font-colour);
+  align-self: center;
 }
 </style>
