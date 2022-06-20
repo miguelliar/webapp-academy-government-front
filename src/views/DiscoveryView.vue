@@ -1,5 +1,9 @@
 <template>
-  <h1>Hello</h1>
+  <div>
+    <h1>Discovery</h1>
+    <p>Aquí verás todo lo que necesites de las subvenciones</p>
+    <img src="../assets/WIP.jpeg" alt="Work in progress" />
+  </div>
 </template>
 
 <script>
