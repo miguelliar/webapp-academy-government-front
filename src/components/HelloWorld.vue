@@ -1,17 +1,23 @@
 <template>
   <div class="hello">
     <p>manolo</p>
-    <search-box></search-box>
+    <SearchBoxComponent></SearchBoxComponent>
+    <ResultsList>
+      <template #result="{ item }">
+        {{ item.name }}
+      </template>
+    </ResultsList>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import SearchBox from "@/components/search-box.vue";
+import SearchBoxComponent from "@/components/SearchBoxComponent.vue";
+import { ResultsList } from "@empathyco/x-components/search";
 
 export default Vue.extend({
   name: "HelloWorld",
-  components: { SearchBox },
+  components: { SearchBoxComponent, ResultsList },
   props: {
     msg: String,
   },
