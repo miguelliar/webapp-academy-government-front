@@ -99,6 +99,16 @@ nav {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 22px;
+    opacity: 1;
+    top: 0px;
+  }
+
+  i:after {
+    content: " ";
+    position: relative;
+    opacity: 0;
+    top: -20px;
+    transition: all 1s;
   }
 
   .fa-home:hover:after {

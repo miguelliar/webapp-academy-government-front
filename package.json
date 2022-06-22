@@ -10,10 +10,11 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@empathyco/x-components": "^3.0.0-alpha.111",
     "@empathyco/x-adapter": "^7.0.0-alpha.33",
+    "@empathyco/x-components": "^3.0.0-alpha.111",
     "@empathyco/x-types": "^10.0.0-alpha.25",
     "core-js": "^3.8.3",
+    "highcharts": "^10.1.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
