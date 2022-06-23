@@ -1,15 +1,17 @@
 <template>
   <figure class="highcharts-figure">
-    <div class="bubble" id="bubble"></div>
+    <div class="word-cloud" id="word-cloud"></div>
   </figure>
 </template>
 
 <script>
 import Vue from "vue";
 import Highcharts from "highcharts";
+import loadWordcloud from "highcharts/modules/wordcloud";
 import highchartsMore from "highcharts/highcharts-more";
 
 highchartsMore(Highcharts);
+loadWordcloud(Highcharts);
 
 export default Vue.extend({
   data() {
@@ -40,6 +42,42 @@ export default Vue.extend({
   },
   methods: {
     createChart() {
+      const data = this.preprocess();
+      console.log(data);
+      Highcharts.chart("word-cloud", {
+        colors: [
+          "#8B6391",
+          "#53B9C9",
+          "#D44A6F",
+          "#FDCB5B",
+          "#80C0A1",
+          "#E67962",
+          "#0086B2",
+        ],
+        title: {
+          text: "",
+          style: {
+            color: "#243D48",
+            fontFamily: "Avenir, Helvetica, Arial, sans-serif",
+            fontSize: "24px",
+          },
+        },
+        legend: {
+          enabled: false,
+        },
+        tooltip: {
+          headerFormat:
+            '<span style="font-size: 16px; font-weight: bolder ; color:#243D48;">{point.key}</span><br/>',
+          style: {
+            fontSize: 16,
+          },
+        },
+        plotOptions: {
+          series: {},
+        },
+        series: data,
+      });
+      /*
       Highcharts.chart("bubble", {
         chart: {
           type: "packedbubble",
@@ -97,12 +135,32 @@ export default Vue.extend({
           ];
         }, []),
       });
+      */
     },
     getColor() {
       if (this.counter === this.colors.length) {
         this.counter = 0;
       }
       return this.colors[this.counter++];
+    },
+    preprocess() {
+      let res = [];
+      return this.series.content.reduce(
+        (list, current) => [
+          ...list,
+          {
+            type: "wordcloud",
+            data: current.data.reduce((finalList, currentElement) => {
+              return [
+                ...finalList,
+                { name: currentElement.name, weight: currentElement.value },
+              ];
+            }, []),
+            name: "Ocurrences",
+          },
+        ],
+        []
+      );
     },
   },
   mounted() {

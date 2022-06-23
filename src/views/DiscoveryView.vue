@@ -3,16 +3,101 @@
     <h1>Explora</h1>
     <p>Aquí verás todo lo que necesites de las subvenciones</p>
     <BubbleChart :series="getData"></BubbleChart>
+    <WordCloud :series="getDataWordCloud"></WordCloud>
   </div>
 </template>
 
 <script>
 import BubbleChart from "@/components/insights/BubbleChart";
+import WordCloud from "@/components/insights/WordCloud";
 
 export default {
   name: "DiscoveryView",
-  components: { BubbleChart },
+  components: { BubbleChart, WordCloud },
   computed: {
+    getDataWordCloud() {
+      return {
+        content: [
+          {
+            name: "Genres",
+            data: [
+              {
+                value: 9,
+                name: "News",
+              },
+              {
+                value: 1338,
+                name: "Drama",
+              },
+              {
+                value: 144,
+                name: "Fantasy",
+              },
+              {
+                value: 224,
+                name: "Horror",
+              },
+              {
+                value: 100,
+                name: "Biography",
+              },
+              {
+                value: 84,
+                name: "Music",
+              },
+              {
+                value: 71,
+                name: "War",
+              },
+              {
+                value: 332,
+                name: "Crime",
+              },
+              {
+                value: 59,
+                name: "Western",
+              },
+              {
+                value: 179,
+                name: "Family",
+              },
+              {
+                value: 318,
+                name: "Adventure",
+              },
+              {
+                value: 408,
+                name: "Action",
+              },
+              {
+                value: 96,
+                name: "History",
+              },
+              {
+                value: 159,
+                name: "Mystery",
+              },
+              {
+                value: 116,
+                name: "Sci-Fi",
+              },
+              {
+                value: 52,
+                name: "Musical",
+              },
+              {
+                value: 272,
+                name: "Thriller",
+              },
+              {
+                value: 14,
+                name: "Film-Noir",
+              },
+            ],
+          },
+        ],
+      };
+    },
     getData() {
       return {
         content: [
@@ -22,11 +107,11 @@ export default {
               {
                 // name property is used for the datalabel
                 // value property is used for the volume of the bubble
-                value: 312177,
+                value: 312,
                 name: "Documentary",
               },
               {
-                value: 351225,
+                value: 351,
                 name: "Short",
               },
             ],
@@ -35,19 +120,19 @@ export default {
             name: "Genres",
             data: [
               {
-                value: 217634,
+                value: 217,
                 name: "Animation",
               },
               {
-                value: 832575,
+                value: 832,
                 name: "Comedy",
               },
               {
-                value: 349092,
+                value: 349,
                 name: "Romance",
               },
               {
-                value: 46874,
+                value: 46,
                 name: "Sport",
               },
             ],
@@ -56,75 +141,75 @@ export default {
             name: "Genres",
             data: [
               {
-                value: 9868,
+                value: 9,
                 name: "News",
               },
               {
-                value: 1338571,
+                value: 1338,
                 name: "Drama",
               },
               {
-                value: 144364,
+                value: 144,
                 name: "Fantasy",
               },
               {
-                value: 224381,
+                value: 224,
                 name: "Horror",
               },
               {
-                value: 100616,
+                value: 100,
                 name: "Biography",
               },
               {
-                value: 84670,
+                value: 84,
                 name: "Music",
               },
               {
-                value: 71150,
+                value: 71,
                 name: "War",
               },
               {
-                value: 332246,
+                value: 332,
                 name: "Crime",
               },
               {
-                value: 59133,
+                value: 59,
                 name: "Western",
               },
               {
-                value: 179679,
+                value: 179,
                 name: "Family",
               },
               {
-                value: 318574,
+                value: 318,
                 name: "Adventure",
               },
               {
-                value: 408556,
+                value: 408,
                 name: "Action",
               },
               {
-                value: 96947,
+                value: 96,
                 name: "History",
               },
               {
-                value: 159786,
+                value: 159,
                 name: "Mystery",
               },
               {
-                value: 116407,
+                value: 116,
                 name: "Sci-Fi",
               },
               {
-                value: 52137,
+                value: 52,
                 name: "Musical",
               },
               {
-                value: 271966,
+                value: 272,
                 name: "Thriller",
               },
               {
-                value: 14871,
+                value: 14,
                 name: "Film-Noir",
               },
             ],
@@ -133,20 +218,16 @@ export default {
             name: "Genres",
             data: [
               {
-                value: 10967,
+                value: 10,
                 name: "Game-Show",
               },
               {
-                value: 12104,
+                value: 12,
                 name: "Talk-Show",
               },
               {
-                value: 32006,
+                value: 32,
                 name: "Reality-TV",
-              },
-              {
-                value: 297,
-                name: "Adult",
               },
             ],
           },
